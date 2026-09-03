@@ -13,7 +13,7 @@ body {
     margin: 0;
     }
     h1 {
-      color: #ffffff;
+      color: #000000;
       padding: 5px;
       margin: 0;
       }
@@ -22,7 +22,7 @@ body {
         max-width: 1000px;
         margin: auto;
         min-height: 100vh;
-        border: 2px solid #2c7bb6;
+        border: 2px solid #ffffff;
         border-radius: 25px;
         overflow: hidden;
       }
