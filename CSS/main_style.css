@@ -2,12 +2,12 @@
 Colorblind safe color palette from colorbrewer2.org.
 #d7191c - Red
 #000000 - Black
-#ffffbf - Off Yellow
-#abd9e9 - Light Blue
+#ffffff - white
 #2c7bb6 - Blue
+#fe9929 - Yelllow
 */
 body {
-    background-color: #d7191c;
+    background-color: #000000;
     color: #d7191c;
     text-align: center;
     margin: 0;
@@ -18,11 +18,11 @@ body {
       margin: 0;
       }
       #body-container {
-        background-color: #000000;
+        background-color: #ffffff;
         max-width: 1000px;
         margin: auto;
         min-height: 100vh;
-        border: 2px solid #ffffff;
+        border: 2px solid #fe9929;
         border-radius: 25px;
         overflow: hidden;
       }
