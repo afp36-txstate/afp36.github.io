@@ -27,8 +27,10 @@ body {
         overflow: hidden;
       }
       #header {
+        background-color: #0571b0;
       }
       #profile-picture {
+        
       }
       #welcome-text {
       }
