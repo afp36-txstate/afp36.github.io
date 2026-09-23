@@ -10,6 +10,7 @@ developed by Enterprise Technology Solutions is neat."],
   ["Texas Ecosystems Analytical Mapper", "http://tpwd.texas.gov/gis/team/", "The
 Texas Parks and Wildlife's Landscape Ecology program is great."]
 ];
+
 function welcome()
 {
     let a = "Please enter your name.";
@@ -19,6 +20,7 @@ function welcome()
     message = "<h1>Hello, welcome to my webpage, " + user_name + "!</h1>"
     return message
 }
+
 function webmap_table()
 {
   document.write("<table width=100%>");
