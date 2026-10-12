@@ -11,6 +11,7 @@ developed by Enterprise Technology Solutions is neat."],
   ["Texas Ecosystems Analytical Mapper", "http://tpwd.texas.gov/gis/team/", "The
 Texas Parks and Wildlife's Landscape Ecology program is great."]
 ]
+
 function webmap_table()
 {
   document.write("<table width=100%>");
@@ -26,12 +27,13 @@ function webmap_table()
  document.write("</table>");
  return "";
 }
+
 function welcome()
 {
     let a = "Please enter your name.";
     let b = "Type your name here.";
 // A prompt box is used to prompt users to input a value before entering a page.
     user_name = window.prompt(a, b);
-    message = "<h1>Hello, welcome to my webpage, " + user_name + "!</h1>"
+    message = "<h1>Hello, welcome to my webpage, " + user_name + "!</h1>";
     return message
 }
