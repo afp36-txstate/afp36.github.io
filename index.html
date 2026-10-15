@@ -5,21 +5,13 @@
   file -->
   <meta charset="utf-8">
   <meta name = "viewport" content = "width=device-width, initial- scale=1.0" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
-  integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="">
-  <link
-rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
-integrity="sha256-
-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
-crossorigin="">
-  <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js" integrity="sha256
-  NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js" integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
   <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css">
   <script src="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js"></script>
-  <script src="https://unpkg.com/leaflet-control-
-  geocoder/dist/Control.Geocoder.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-
-  geocoder/dist/Control.Geocoder.css" />
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
   <script> src="javascript/secret_keys.js"></script>
   <title>Andrew Pearson</title>
   <link rel="stylesheet" type="text/css" href="CSS/main_style.css">
@@ -69,20 +61,21 @@ crossorigin="">
 <div id="mapid" style="width: 600px; height: 400px; margin: auto; bottom: 30px;">
 <script>
 var mymap = L.map('mapid');
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {maxZoom: 18, id: 'mapbox/dark-v10',
-//accessToken: mapbox_access_token}).addTo(mymap);/
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {maxZoom: 18, id: 'mapbox/dark-v10', accessToken: mapbox_access_token}).addTo(mymap);
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {}).addTo(mymap);
 var geocoder = L.Control.geocoder({defaultMarkGeocode: false,geocoder: new L.Control.Geocoder.Nominatim()
-}).on('markgeocode', function(e) {
-var bbox = e.geocode.bbox;
-var poly = L.polygon([
-bbox.getSouthEast(),
-bbox.getNorthEast(),
-bbox.getNorthWest(),
-bbox.getSouthWest()
-]);
-mymap.fitBounds(poly.getBounds());
-}).addTo(mymap); n
+})
+.on('markgeocode', function(e) {
+  var bbox = e.geocode.bbox;
+  var poly = L.polygon([
+     bbox.getSouthEast(),
+     bbox.getNorthEast(),
+     bbox.getNorthWest(),
+     bbox.getSouthWest()
+  ]).addTo(mymap);
+  mymap.fitBounds(poly.getBounds());
+})
+.addTo(mymap);
 //var marker = L.marker([51.5, -0.09]).addTo(mymap);
 //var circle = L.circle([51.508, -0.11], { color: 'red', fillColor: '#f03',
 //fillOpacity: 0.5, radius: 500}).addTo(mymap);
