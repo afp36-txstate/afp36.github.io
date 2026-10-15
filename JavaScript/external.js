@@ -1,32 +1,31 @@
-// arr = ["Mael","Eric","Randall","James"];
-// for (var i=0; i < arr.length; i++)
-// {
-// document.writeln(arr[i],"<br>");
-// }
+// A prompt box is used to prompt users to input a value before entering a page.
+//
+//user_name = window.prompt("Please enter your name", "Type your name here");
+//document.write("<h1>Hello, welcome " + user_name + "!</h1>");
 
-var webmaps =
-[
-  ["Oil Spill Toolkit", "https://www.glo.texas.gov", "The oil spill toolkit
-developed by Enterprise Technology Solutions is neat."],
-  ["Texas Ecosystems Analytical Mapper", "http://tpwd.texas.gov/gis/team/", "The
-Texas Parks and Wildlife's Landscape Ecology program is great."]
-]
+var webmaps = [
+  [
+    "Oil Spill Toolkit",
+    "https://www.glo.texas.gov"
+  ],
+  [
+    "The Oil Spill Toolkit developed by Enterprise Technology Solutions of the Texas General Land Office is a decision-support resource.<br>" +
+    "This is my second sentence about the Oil Spill Toolkit.<br>" +
+    "This is my third sentence about the Oil Spill Toolkit.<br>" +
+    "This is my fourth sentence about the Oil Spill Toolkit."
+  ],
+  [
+    "Texas Ecosystems Analytical Mapper",
+    "http://tpwd.texas.gov/gis/team/"
+  ],
 
-function webmap_table()
-{
-  document.write("<table width=100%>");
- for (var row=0; row < webmaps.length; row++)
- {
-   document.write("<tr>");
-   for (var column=0; column < webmaps[0].length; column++)
-   {
-     document.write("<td>" + webmaps[row][column] + "</td>")
-   }
-   document.write("</tr>");
- }
- document.write("</table>");
- return "";
-}
+  [
+    "The Texas Parks and Wildlife's Landscape Ecology program developed this application to deliver ecological mapping data to Texas citizens.<br>" +
+    "This is my second sentence about the Texas Ecosystems Analytical Mapper.<br>" +
+    "This is my third sentence about the Texas Ecosystems Analytical Mapper.<br>" +
+    "This is my fourth sentence about the Texas Ecosystems Analytical Mapper."
+  ]
+];
 
 function welcome()
 {
@@ -34,6 +33,36 @@ function welcome()
     let b = "Type your name here.";
 // A prompt box is used to prompt users to input a value before entering a page.
     user_name = window.prompt(a, b);
-    message = "<h1>Hello, welcome to my webpage, " + user_name + "!</h1>";
+    message = "<h1>Hello, welcome to my webpage, " + user_name + "!</h1>"
     return message
+}
+
+
+
+function webmap_table()
+{
+  document.write("<table width=100%>");
+    for (var row=0; row < webmaps.length; row++)
+    {
+      document.write("<tr>");
+
+      if (row % 2==0)
+      {
+        for (var column=0; column < webmaps[0].length; column++)
+        {
+          document.write("<td>" + webmaps[row][column] + "</td>");
+        }
+      }
+      else
+      {
+        document.write(
+          "<td colspan='2' class='webmap-description'>" +
+          webmaps[row][0] +
+          "</td>"
+        );
+      }
+      document.write("</tr>");
+    }
+    document.write("</table>");
+    return "";
 }
